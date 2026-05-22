@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="diseño.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="info">
+
+            <div class="titulo">
+
+                <img
+                src="logo.png"
+                alt="logo"
+                class="logo">
+                
+                <h1>Dashboard</h1>
+
+                <h2>Bienvenido de nuevo</h2>
+
+            </div>
+
+        </div>
+
+        <div class="login">
+
+            <form onsubmit="login(event)">
+
+                <label for="correo">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="@correoejemplo.com"
+                    required
+                >
+
+                <label for="contra">
+                    Contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="contra"
+                    placeholder="Ingresa tu contraseña"
+                    required
+                >
+
+                <button type="submit">
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+    async function login(event) {
+
+        event.preventDefault();
+
+        let correo =
+        document.getElementById("correo").value;
+
+        let contra =
+        document.getElementById("contra").value;
+
+        try {
+
+            const respuesta = await fetch(
+                "http://localhost:3000/login",
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        correo,
+                        contra
+                    })
+
+                }
+            );
+
+            const data = await respuesta.json();
+
+            if (data.success) {
+
+                window.location.href =
+                "dashboard.html";
+
+            } else {
+
+                alert("Credenciales incorrectas");
+
+            }
+
+        } catch(error) {
+
+            console.log(error);
+
+            alert("Error conectando al servidor");
+
+        }
+
+    }
+
+    </script>
+
+</body>
+
+</html>

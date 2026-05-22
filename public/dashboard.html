@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="dash.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Dashboard
+        </div>
+
+        <div class="menu">
+
+            <a href="#" class="active">Ventas</a>
+            <a href="#">Inventario</a>
+            <a href="#">Clientes</a>
+
+        </div>
+
+        <div class="perfil"></div>
+
+    </nav>
+
+    <section class="top">
+
+        <div>
+
+            <p class="subtitulo">
+                DASHBOARD DE VENTAS
+            </p>
+
+            <h1>
+                Rendimiento Comercial
+            </h1>
+
+        </div>
+
+        <button class="btn">
+            Exportar Reporte
+        </button>
+
+    </section>
+
+    <section class="cards">
+
+        <div class="card naranja">
+
+            <p>VENTAS TOTALES</p>
+
+            <h2 id="ventasTotales">
+                $0
+            </h2>
+
+            <span>
+                +12%
+            </span>
+
+        </div>
+
+        <div class="card">
+
+            <p>PEDIDOS TOTALES</p>
+
+            <h2 id="pedidosTotales">
+                0
+            </h2>
+
+            <span>
+                +5%
+            </span>
+
+        </div>
+
+        <div class="card azul">
+
+            <p>PROMEDIO DE ORDEN</p>
+
+            <h2 id="promedioOrden">
+                $0
+            </h2>
+
+            <span>
+                -2%
+            </span>
+
+        </div>
+
+    </section>
+
+    <section class="contenido">
+
+        <div class="grafica">
+
+            <h2>
+                Rendimiento
+            </h2>
+
+            <canvas id="graficaVentas"></canvas>
+
+        </div>
+
+        <div class="categorias">
+
+            <h2>
+                Categorías
+            </h2>
+
+            <div class="circulo">
+                4
+            </div>
+
+            <ul>
+
+                <li>Balones</li>
+                <li>Rodilleras</li>
+                <li>Redes</li>
+                <li>Calzado</li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <section class="tabla">
+
+        <div class="tabla-header">
+
+            <h2>
+                Productos Más Vendidos
+            </h2>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>Ventas</th>
+                    <th>Stock</th>
+                    <th>Estado</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tabla-productos">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
