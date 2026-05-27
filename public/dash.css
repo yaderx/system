@@ -49,32 +49,30 @@ nav{
     padding-bottom: 5px;
 }
 
-/* Hacer que el círculo naranja sea el eje del cartelito */
-/* --- EL CÍRCULO CONTENEDOR (AHORA TIENE TAMAÑO FIJO) --- */
+
 .perfil {
-    width: 40px !important;  /* Forzamos los 40 píxeles de ancho */
-    height: 40px !important; /* Forzamos los 40 píxeles de alto */
+    width: 40px !important; 
+    height: 40px !important; 
     border-radius: 50%;
-    background-color: #d97706; /* Tu color naranja de fondo */
+    background-color: #d97706; 
     position: relative;
-    overflow: visible; /* Permite que el cartelito de cerrar sesión salga del círculo */
-    display: flex;
+    overflow: visible; 
     justify-content: center;
     align-items: center;
 }
 
-/* --- LA FOTO DE PERFIL (OBLIGADA A ENCAJAR EN LOS 40PX) --- */
+
 .foto-perfil {
     width: 40px !important;   
     height: 40px !important; 
-    border-radius: 50% !important; /* La hace perfectamente redonda */
-    object-fit: cover !important;  /* Si la foto es rectangular, la recorta al centro sin deformarla */
+    border-radius: 50% !important; 
+    object-fit: cover !important;  
     display: block;
 }
 
-/* Estilo del cartelito flotante */
+
 .menu-cerrar {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: absolute;
     top: 50px;
     right: 0;
@@ -86,7 +84,7 @@ nav{
     min-width: 130px;
 }
 
-/* Estilo del texto "Administrador" */
+
 .menu-cerrar p {
     font-size: 14px;
     color: #333;
@@ -99,7 +97,7 @@ nav{
     margin: 5px 0;
 }
 
-/* Estilo del enlace Cerrar Sesión */
+
 .menu-cerrar a {
     display: block;
     color: red;
@@ -109,7 +107,7 @@ nav{
     padding: 5px 0;
 }
 
-/* Clase que se activa al hacer clic */
+
 .menu-cerrar.show {
     display: block;
 }
